@@ -1,0 +1,36 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+}
+
+.multiview {
+  border-collapse: separate;
+  border: solid 5px white;
+}
+
+.multiview td {
+  border: solid 5px white;
+  z-index: 1;
+}
+
+.multiview .pst, .multiview .prg {
+  width: 640px;
+  height: 360px;
+}
+
+.multiview .input {
+  width: 320px;
+  height: 180px;
+}
+
+.multiview .canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.multiview .input.active {
+  border: solid 5px red;
+  z-index: 2;
+}

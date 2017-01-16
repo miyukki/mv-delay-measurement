@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="application">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
+    <script src="js/master.js" charset="utf-8"></script>
+  </head>
+  <body>
+    hogehoge
+    <table class="multiview" ng-controller="MultiviewController" ng-keydown="handleKeydown($event)" tabindex="0">
+      <tr rowspan="2">
+        <td colspan="2" class="pst">
+          AAA
+        </td>
+        <td colspan="2" class="prg">
+          BBB
+        </td>
+      </tr>
+      <tr>
+        <td ng-repeat="i in [1, 2, 3, 4]" class="input" ng-class="{ 'active': i == programCameraIndex }">
+          <canvas></canvas>
+        </td>
+        <!-- <td ng-repeat="todo in todoList.todos"> -->
+        <!-- <td class="input">CCC</td> -->
+        <!-- <td class="input">DDD</td> -->
+        <!-- <td class="input">EEE</td> -->
+        <!-- <td class="input">FFF</td> -->
+      </tr>
+      <tr>
+        <td ng-repeat="i in [5, 6, 7, 8]" class="input" ng-class="{ 'active': i == programCameraIndex }">{{i}}</td>
+        <!-- <td class="input">CCC</td>
+        <td class="input">DDD</td>
+        <td class="input">EEE</td>
+        <td class="input">FFF</td> -->
+      </tr>
+    </table>
+  </body>
+</html>
