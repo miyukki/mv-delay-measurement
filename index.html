@@ -1,41 +1,70 @@
 <!DOCTYPE html>
-<html ng-app="application">
+<html>
   <head>
     <meta charset="utf-8">
-    <title>Test</title>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-    <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
-    <script src="js/master.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/keiyaku.css">
+    <title>映像制作現場における，遅延の許容要件に関する実験的研究 | 説明</title>
+    <style>
+      .keiyaku {
+        width: 900px;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
-    hogehoge
-    <table class="multiview" ng-controller="MultiviewController" ng-keydown="handleKeydown($event)" tabindex="0">
-      <tr rowspan="2">
-        <td colspan="2" class="pst">
-          AAA
-        </td>
-        <td colspan="2" class="prg">
-          BBB
-        </td>
-      </tr>
-      <tr>
-        <td ng-repeat="i in [1, 2, 3, 4]" class="input" ng-class="{ 'active': i == programCameraIndex }">
-          <canvas></canvas>
-        </td>
-        <!-- <td ng-repeat="todo in todoList.todos"> -->
-        <!-- <td class="input">CCC</td> -->
-        <!-- <td class="input">DDD</td> -->
-        <!-- <td class="input">EEE</td> -->
-        <!-- <td class="input">FFF</td> -->
-      </tr>
-      <tr>
-        <td ng-repeat="i in [5, 6, 7, 8]" class="input" ng-class="{ 'active': i == programCameraIndex }">{{i}}</td>
-        <!-- <td class="input">CCC</td>
-        <td class="input">DDD</td>
-        <td class="input">EEE</td>
-        <td class="input">FFF</td> -->
-      </tr>
-    </table>
+    <div class="keiyaku">
+      <h1>映像制作現場における，遅延の許容要件に関する実験的研究</h1>
+
+      <h2>実験の目的</h2>
+      <p>この研究は，映像制作現場において，人間の操作からどれくらいの遅延で違和感を感じるかを計測し，分析します．</p>
+      <p>これは，IP伝送装置装置における遅延の要件の指標として分析することを目的としています．</p>
+
+      <h2>実験方法</h2>
+      <p>ブラウザで実験用のサイトを開き，手順に沿って実験を進めていきます．所要時間は15分程度となります．</p>
+
+      <h2>実験時に集める情報の内容</h2>
+      <p>本実験では，ブラウザから得られる情報などで，以下のデータを収集致します．</p>
+      <ul>
+        <li>キーボードの入力から画面に描画されるまでの遅延時間</li>
+        <li>ユーザーの遅延に対する認知情報</li>
+      </ul>
+
+      <h2>個人情報とデータの取り扱い</h2>
+      <p>取得したデータには個人が識別できるような個人情報は含んでおらず，IPアドレスやCookieのデータなども保存しておりません．</p>
+      <p>また取得したデータは，研究目的以外には使用しません．</p>
+
+      <h2>実験に参加することによる利益と不利益</h2>
+      <p>本研究に参加することによる費用の負担はありません．参加されなくても不利益を受けることはありません．</p>
+      <p>また，インターネット通信が必要となりますが，これより生じる電気通信量につきましては，保証できませんのでご了承ください．</p>
+
+      <h2>謝礼の支払いについて</h2>
+      <p>実験対象者への謝礼の支払いはありません．あらかじめご了承頂きますよう，お願い申しあげます．</p>
+      <p>実験の成果につきましては，実験が終了次第，下記実験者の連絡先より開示予定です．ご参考いただければ幸いです．</p>
+
+      <h2>知的財産権について</h2>
+      <p>研究の進展によっては，特許等の知的財産権が生ずる可能性がありますが，知的財産権の帰属は，研究者または慶應義塾大学，あるいは慶應義塾外の共同研究者と協議の上決定され，データ提供者に帰属することはありません．</p>
+
+      <h2>問い合わせ，苦情等の連絡先</h2>
+      <p>本研究に関連したご質問や，ご意見，ご要望，同意の取り消しのご依頼につきましては，下記連絡先にご連絡ください．</p>
+      <p>なお，本研究に参加している方の権利が守られていないと思われた場合や，担当者以外の意見や情報がほしい場合は以下連絡先へご連絡ください．</p>
+
+      <h3>（連絡先）</h3>
+      〒252-0882 神奈川県藤沢市遠藤 5322<br>
+      慶應義塾大学 SFC 実験・調査倫理委員会<br>
+      事務局：ＳＦＣ事務室総務担当<br>
+      Mail: rinri@sfc.keio.ac.jp<br>
+      以上，何かご不明な点がありましたら遠慮なくお尋ねください．本研究へのご理解とご協力に深く感謝いたします．
+      <h3>（実験者）</h3>
+      慶應義塾大学 環境情報学部 4 年<br>
+      村井研究室所属 山中 勇成<br>
+      E-mail: miyukki@sfc.wide.ad.jp
+      <h3>（責任者）</h3>
+      慶應義塾大学 環境情報学部長<br>
+      教授 村井 純
+
+      <hr>
+
+      <p><a href="test.html">承諾して、実験に参加する</a></p>
+    </div>
   </body>
 </html>

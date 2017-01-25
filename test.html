@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="application">
+  <head>
+    <meta charset="utf-8">
+    <title>映像制作現場における，遅延の許容要件に関する実験的研究 - 実験</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script src="js/master.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p class="tos"><a href="index.html">このページからたどり着いた方は、こちらをお読みください</a></p>
+    <table class="multiview" ng-controller="MultiviewController" ng-keydown="handleKeydown($event)">
+      <tr rowspan="2">
+        <td colspan="2" class="pst">
+          <div ng-if="currentStep == -1">
+            <!-- First -->
+            <p>A. この調査では、映像制作現場において、人間の操作からどれくらいの遅延で違和感を感じるかを計測します。</p>
+            <p>B. ボタンを押した後に、{{steps.length}}回15秒間、ミリ秒単位のそれぞれ異なった遅延を加え、どう感じたかを調査します。</p>
+            <p>C. 結果は自動的に送信されます。</p>
+            <ul>
+              <li>1 ~ 8のキーを押して、右の画と赤い枠が変わることを確認してください。</li>
+              <li>今の状況で大きな遅延を感じる場合は調査をお控えください。</li>
+              <li>また、表示解像度に画面全体が収まらない場合も調査をお控えください。</li>
+            </ul>
+            <button ng-if="!isSmartPhone()" class="action" ng-click="nextStep()">始める</button>
+            <p ng-if="isSmartPhone()">スマートフォン端末では、実験に参加できません</p>
+          </div>
+          <div ng-if="currentStep == steps.length">
+            <!-- Last -->
+            <p>これで終了となります。調査へのご協力ありがとうございました。</p>
+            <p>参考として結果は以下の通りです。</p>
+            <textarea class="resultText">{{getResultText()}}</textarea>
+            <!-- <ul>
+              <li ng-repeat="result in results">
+                遅延 {{result.switchDelay}}ms のとき
+                <span ng-if="result.feel == 1">
+                  遅延を許容できる
+                </span>
+                <span ng-if="result.feel == 0">
+                  遅延を許容できない
+                </span>
+              </li>
+            </ul> -->
+          </div>
+          <div ng-if="0 <= currentStep &amp;&amp; currentStep < steps.length">
+            <p class="step">ステップ {{currentStep + 1}}/{{steps.length}}</p>
+            <div class="time" ng-if="15 < remainSecond">
+              開始まで
+              <span class="second second-red">{{remainSecond - 15}}</span>
+              秒
+            </div>
+            <div class="time" ng-if="remainSecond <= 15">
+              終了まで
+              <span class="second">{{remainSecond}}</span>
+              秒
+              <button class="action" ng-click="finishStep()" ng-if="remainSecond != 0">このステップを終了する</button>
+            </div>
+            <div class="feels" ng-if="results.length != currentStep + 1 &amp;&amp; remainSecond == 0">
+              <button class="feel" ng-if="remainSecond == 0" ng-click="recordFeel(1)">遅延を許容できる</button>
+              <button class="feel" ng-if="remainSecond == 0" ng-click="recordFeel(0)">遅延を許容できない</button>
+            </div>
+            <button class="action" ng-if="results.length == currentStep + 1 &amp;&amp; remainSecond == 0" ng-click="nextStep()">
+              次へ
+            </button>
+          </div>
+        </td>
+        <td colspan="2" class="prg" ng-controller="ProgramController">
+          <canvas></canvas>
+          <span class="label">PROGRAM</span>
+        </td>
+      </tr>
+      <tr>
+        <td ng-repeat="i in [1, 2, 3, 4]" class="source" ng-class="{ 'active': i == programSourceIndex + 1 }" ng-controller="SourceController" title="{{i}}">
+          <canvas></canvas>
+          <span class="label">INPUT {{i}}</span>
+        </td>
+      </tr>
+      <tr>
+        <td ng-repeat="i in [5, 6, 7, 8]" class="source" ng-class="{ 'active': i == programSourceIndex + 1 }" ng-controller="SourceController" title="{{i}}">
+          <canvas></canvas>
+          <span class="label">INPUT {{i}}</span>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

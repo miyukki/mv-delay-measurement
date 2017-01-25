@@ -5,32 +5,117 @@ html, body {
   color: white;
 }
 
+.tos {
+  margin: 10px;
+}
+
+.tos a {
+  color: white;
+}
+
 .multiview {
+  margin: 10px;
+  width: 1280px;
+  height: 720px;
   border-collapse: separate;
   border: solid 5px white;
 }
 
-.multiview td {
+.multiview .pst, .multiview .prg, .multiview .source {
+  position: relative;
   border: solid 5px white;
-  z-index: 1;
 }
 
 .multiview .pst, .multiview .prg {
-  width: 640px;
-  height: 360px;
+  /*width: 640px;
+  height: 360px;*/
+  width: 625px;
+  height: 351.5625px;
 }
 
-.multiview .input {
-  width: 320px;
-  height: 180px;
+.multiview .resultText {
+  display: block;
+  margin: 30px auto;
+  width: 600px;
+  height: 200px;
 }
 
-.multiview .canvas {
+.multiview .pst p {
+  margin: 15px;
+}
+
+.multiview .pst ul {
+  margin: 15px 0 15px 30px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.multiview .pst .time {
+  margin: 20px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.multiview .pst .second {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.multiview .pst .second.second-red {
+  color: red;
+}
+
+.multiview .pst .feels {
+  text-align: center;
+}
+
+.multiview .pst button {
+  margin: 10px 0;
+  padding: 15px 40px;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.multiview .pst .action {
+  display: block;
+  margin: 10px auto;
+}
+
+.multiview .prg .label {
+  position: absolute;
+  top: 322px;
+  left: 260px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1px 10px;
+  border-radius: 5px;
+}
+
+.multiview .source {
+  /*width: 320px;
+  height: 180px;*/
+  width: 307.5px;
+  height: 172.96875px;
+}
+
+.multiview .source.active {
+  border: solid 5px red;
+}
+
+.multiview .source .label {
+  position: absolute;
+  top: 143px;
+  left: 117px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1px 10px;
+  border-radius: 5px;
+}
+
+.multiview canvas {
   width: 100%;
   height: 100%;
+  vertical-align: bottom;
 }
 
-.multiview .input.active {
-  border: solid 5px red;
-  z-index: 2;
+.multiview video {
+  display: none;
 }
